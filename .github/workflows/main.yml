@@ -2,9 +2,7 @@ name: Push to Main
 on:
   push:
     branches:
-      - main
-    paths-ignore:
-      - '.github/workflows/*'
+      - release
 jobs:
   push:
     runs-on: windows-latest
