@@ -1,0 +1,129 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "react-native",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "prefer-arrow-callback": "warn",
+    "prefer-template": "warn",
+    "prefer-const": "warn",
+    "arrow-parens": ["warn", "as-needed"],
+    "no-console": "warn",
+    "no-prototype-builtins": "warn",
+    "no-shadow": "warn",
+    "no-else-return": "warn",
+    "no-multiple-empty-lines": [
+      "warn",
+      {
+        "max": 1
+      }
+    ],
+    "comma-spacing": "error",
+    "curly": "error",
+    "comma-dangle": ["error", "never"],
+    "quotes": ["error", "double"],
+    "semi": ["error", "never"],
+    "indent": ["error", 3],
+    "no-trailing-spaces": "error",
+    "no-mixed-spaces-and-tabs": "error",
+    "no-multi-spaces": "error",
+    "no-use-before-define": "error",
+    "no-unused-vars": "error",
+    "no-unused-expressions": "error",
+    "no-undef": "error",
+    "no-empty": "error",
+    "no-var": "error",
+    "no-extra-boolean-cast": "error",
+    "no-extra-parens": "error",
+    "no-inner-declarations": "error",
+    "no-warning-comments": [
+      "error",
+      {
+        "terms": [
+          "@ts-ignore"
+        ],
+        "location": "anywhere"
+      }
+    ],
+    "array-callback-return": "error",
+    "eqeqeq": "error",
+    "object-curly-spacing": ["error", "always"],
+    "array-bracket-spacing": ["error", "always"],
+    "space-in-parens": "error",
+    "space-before-blocks": "error",
+    "space-before-function-paren": "error",
+    "computed-property-spacing": "error",
+    "arrow-spacing": "error",
+    "object-shorthand": "error",
+    "keyword-spacing": [
+      "error",
+      {
+        "before": true,
+        "after": true
+      }
+    ],
+    "space-infix-ops": [
+      "error",
+      {
+        "int32Hint": false
+      }
+    ],
+    "brace-style": [
+      "error",
+      "1tbs",
+      {
+        "allowSingleLine": true
+      }
+    ],
+    "react/no-unescaped-entities": "error",
+    "react/jsx-curly-brace-presence": "error",
+    "react/self-closing-comp": "error",
+    "react/jsx-no-useless-fragment": "error",
+    "react/jsx-fragments": ["error", "element"],
+    "react/jsx-space-before-closing": ["error", "always"],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "interface",
+        "format": ["PascalCase"],
+        "custom": {
+          "regex": "^I[A-Za-z]+$",
+          "match": true
+        }
+      },
+      {
+        "selector": "enum",
+        "format": ["PascalCase"],
+        "custom": {
+          "regex": "Enum$",
+          "match": true
+        }
+      },
+      {
+        "selector": "typeAlias",
+        "format": ["PascalCase"],
+        "custom": {
+          "regex": "Type$",
+          "match": true
+        }
+      }
+    ]
+  }
+}
