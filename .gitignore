@@ -10,6 +10,7 @@ node_modules/
 assets/
 dist/
 web-build/
+ui-kit/*/__snapshots__/
 
 # Native
 *.orig.*

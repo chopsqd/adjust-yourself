@@ -1,23 +1,15 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-   // ваше начальное состояние
-};
+
+}
 
 const slice = createSlice({
-   name: 'counter',
+   name: "main",
    initialState,
    reducers: {
-      increment(state) {
-         state.value += 1;
-      },
-      decrement(state) {
-         state.value -= 1;
-      },
-   },
-});
 
-export const { increment, decrement } = slice.actions;
-export const selectCount = state => state.counter.value;
+   }
+})
 
-export default slice.reducer;
+export default slice.reducer

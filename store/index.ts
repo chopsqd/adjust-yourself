@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit"
-import rootReducer from "./slices"
+import main from "./slices/main"
 
-const store = configureStore({
-   reducer: rootReducer
+export const store = configureStore({
+   reducer: {
+      main
+   }
 })
-
-export default store

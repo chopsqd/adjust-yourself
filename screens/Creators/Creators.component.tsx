@@ -1,12 +1,13 @@
 import React from "react"
 import { View, Text } from "react-native"
 
-const CreatorsScreen = () => {
+const Creators = () => {
+
    return (
       <View>
-         <Text>CreatorsScreen</Text>
+         <Text>This is Creators screen</Text>
       </View>
    )
 }
 
-export default CreatorsScreen
+export default Creators

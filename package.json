@@ -13,13 +13,16 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@react-navigation/native": "^6.1.17",
+    "@react-navigation/native-stack": "^6.9.26",
+    "@reduxjs/toolkit": "^2.2.3",
     "expo": "~50.0.14",
     "react": "18.2.0",
-    "react-native": "0.73.6"
+    "react-native": "0.73.6",
+    "react-redux": "^9.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
-    "typescript": "^5.4.5",
     "@types/jest": "^29.5.12",
     "@types/react": "~18.2.45",
     "@types/react-native": "^0.73.0",
@@ -31,7 +34,8 @@
     "eslint-plugin-react-native": "^4.1.0",
     "jest": "^29.7.0",
     "jest-expo": "^50.0.4",
-    "react-test-renderer": "^18.2.0"
+    "react-test-renderer": "^18.2.0",
+    "typescript": "^5.4.5"
   },
   "private": true
 }

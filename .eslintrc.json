@@ -1,7 +1,16 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "jest": true
+  },
+  "globals": {
+    "module": "readonly"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   },
   "extends": [
     "eslint:recommended",
@@ -24,8 +33,6 @@
     "prefer-arrow-callback": "warn",
     "prefer-template": "warn",
     "prefer-const": "warn",
-    "arrow-parens": ["warn", "as-needed"],
-    "no-console": "warn",
     "no-prototype-builtins": "warn",
     "no-shadow": "warn",
     "no-else-return": "warn",
@@ -92,12 +99,21 @@
         "allowSingleLine": true
       }
     ],
+    "react/jsx-curly-brace-presence": [
+      "error",
+      {
+        "props": "always"
+      }
+    ],
     "react/no-unescaped-entities": "error",
-    "react/jsx-curly-brace-presence": "error",
     "react/self-closing-comp": "error",
     "react/jsx-no-useless-fragment": "error",
-    "react/jsx-fragments": ["error", "element"],
-    "react/jsx-space-before-closing": ["error", "always"],
+    "react/jsx-tag-spacing": [
+      "error",
+      {
+        "beforeSelfClosing": "always"
+      }
+    ],
     "@typescript-eslint/naming-convention": [
       "error",
       {

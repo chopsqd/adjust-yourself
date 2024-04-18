@@ -1,11 +1,12 @@
 import React from "react"
-import {Text} from "react-native"
+import { Provider } from "react-redux"
+import { store } from "./store"
+import AppNavigator from "./AppNavigator"
 
 export default function App () {
    return (
-      // <Provider store={store}>
-      //    test
-      // </Provider>
-      <Text>123</Text>
+      <Provider store={store}>
+         <AppNavigator />
+      </Provider>
    )
 }

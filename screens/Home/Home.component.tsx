@@ -1,22 +1,23 @@
 import React from "react"
-import { View, Text, Button } from "react-native"
+import { Button, Text, View } from "react-native"
+import { INavigationProp } from "../../AppNavigator"
 
-const HomeScreen = ({navigation}) => {
+interface IHomeProps {
+   navigation: INavigationProp
+}
+
+const Home: React.FC<IHomeProps> = ({ navigation }) => {
    return (
       <View>
-         <Text>HomeScreen</Text>
+         <Text>Home</Text>
          <Button
-            title="Go to Jane's profile"
+            title={"Go to Creators screen"}
             onPress={() =>
-               navigation.navigate('Profile', {name: 'Jane'})
+               navigation.navigate("Creators")
             }
          />
       </View>
    )
 }
 
-HomeScreen.propTypes = {
-   navigation: PropTypes.object.isRequired,
-};
-
-export default HomeScreen
+export default Home
