@@ -17,12 +17,12 @@ const AppNavigator = () => {
             <Stack.Screen
                name={"Home"}
                component={Home}
-               options={{ headerShown: false }}
+               options={{ headerShown: false, statusBarStyle: "dark" }}
             />
             <Stack.Screen
                name={"Creators"}
                component={Creators}
-               options={{ headerShown: false }}
+               options={{ headerShown: false, statusBarStyle: "dark" }}
             />
          </Stack.Navigator>
       </NavigationContainer>
