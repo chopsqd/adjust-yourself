@@ -26,7 +26,7 @@ const Home: React.FC<IHomeProps> = ({ navigation }) => {
                onPress={() => {
                   navigation.navigate("Lecture", { lecture: currentLevel })
                }}
-               title={"Продолжить"}
+               title={"ПРОДОЛЖИТЬ"}
                bgColor={accent}
                fontSize={fontSize}
             />
@@ -35,7 +35,7 @@ const Home: React.FC<IHomeProps> = ({ navigation }) => {
                   navigation.navigate("Lectures")
                }}
                style={{ marginTop: 10 }}
-               title={"Темы"}
+               title={"ТЕМЫ"}
                bgColor={accent}
                fontSize={fontSize}
             />
@@ -44,7 +44,7 @@ const Home: React.FC<IHomeProps> = ({ navigation }) => {
                   navigation.navigate("SandBox")
                }}
                style={{ marginTop: 10 }}
-               title={"Песочница"}
+               title={"ПЕСОЧНИЦА"}
                bgColor={accent}
                fontSize={fontSize}
             />
