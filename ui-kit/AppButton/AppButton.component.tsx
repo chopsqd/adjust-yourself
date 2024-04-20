@@ -5,13 +5,14 @@ import { IAppButtonProps } from "./AppButton.types"
 import { getContent } from "./AppButton.utils"
 
 const AppButton: React.FC<IAppButtonProps> = (props) => {
-   const { title, onPress, bgColor, fontSize, disabled } = props
+   const { title, onPress, bgColor, fontSize, disabled, style } = props
 
    return (
       <Pressable
          disabled={disabled}
          style={({ pressed }) => [
             styles.button,
+            style,
             {
                backgroundColor: disabled
                   ? "#939393"

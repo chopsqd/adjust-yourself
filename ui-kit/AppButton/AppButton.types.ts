@@ -1,3 +1,4 @@
+import { StyleProp, ViewStyle } from "react-native"
 import { ColorsEnum, FontSizeEnum } from "../../services/StorageService/Storage.types"
 
 export interface IAppButtonProps {
@@ -6,4 +7,5 @@ export interface IAppButtonProps {
    bgColor: ColorsEnum
    fontSize: FontSizeEnum
    disabled?: boolean
+   style?: StyleProp<ViewStyle>
 }

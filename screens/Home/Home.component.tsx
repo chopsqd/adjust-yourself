@@ -19,12 +19,12 @@ const Home: React.FC<IHomeProps> = ({ navigation }) => {
       <View>
          <AppLayout>
             <Image
-               source={require("../../assets/logo.png")}
+               source={require("../../assets/Logo.png")}
                style={styles.image}
             />
             <AppButton
                onPress={() => {
-                  navigation.navigate("Lecture", {lecture: currentLevel})
+                  navigation.navigate("Lecture", { lecture: currentLevel })
                }}
                title={"Продолжить"}
                bgColor={accent}
@@ -34,6 +34,7 @@ const Home: React.FC<IHomeProps> = ({ navigation }) => {
                onPress={() => {
                   navigation.navigate("Lectures")
                }}
+               style={{ marginTop: 10 }}
                title={"Темы"}
                bgColor={accent}
                fontSize={fontSize}
@@ -42,6 +43,7 @@ const Home: React.FC<IHomeProps> = ({ navigation }) => {
                onPress={() => {
                   navigation.navigate("SandBox")
                }}
+               style={{ marginTop: 10 }}
                title={"Песочница"}
                bgColor={accent}
                fontSize={fontSize}
