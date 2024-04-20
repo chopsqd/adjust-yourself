@@ -46,7 +46,6 @@
     "prefer-template": "warn",
     "prefer-const": "warn",
     "no-prototype-builtins": "warn",
-    "no-shadow": "warn",
     "no-else-return": "warn",
     "no-multiple-empty-lines": [
       "warn",
