@@ -6,8 +6,8 @@ node_modules/
 # Expo
 .expo/
 .idea/
-.coverage/
-assets/
+#.coverage/
+#assets/
 dist/
 web-build/
 ui-kit/*/__snapshots__/
