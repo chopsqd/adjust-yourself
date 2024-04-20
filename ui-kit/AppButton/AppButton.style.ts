@@ -6,10 +6,12 @@ export const styles = StyleSheet.create({
       justifyContent: "center",
       borderRadius: 10,
       borderStyle: "solid",
+      alignSelf: "center",
       borderColor: "#fff",
       borderWidth: 2
    },
    text: {
+      padding: 20,
       fontSize: 16,
       lineHeight: 21,
       fontWeight: "bold",
