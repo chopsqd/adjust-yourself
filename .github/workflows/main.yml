@@ -13,11 +13,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Test application
-        run: npm run test
-
       - name: Lint application
         run: npm run lint
+
+      - name: Update snapshots
+        run: npm run test:u
+
+      - name: Test application
+        run: npm run test
 
       - name: Push to main if tests and lint pass
         if: ${{ success() && steps.test.outcome == 'success' && steps.lint.outcome == 'success' }}

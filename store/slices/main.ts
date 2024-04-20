@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { ColorsEnum, FontSizeEnum, IStorageData } from "../../services/StorageService/Storage.types"
+import { RootStateType } from "../index"
 
 const initialState: IStorageData = {
    currentLevel: 0,
@@ -35,5 +36,8 @@ export const {
    setSettingsFontSize,
    setSettingsAccent
 } = mainSlice.actions
+
+export const selectSettings = (state: RootStateType) => state.main.settings
+export const selectCurrentLevel = (state: RootStateType) => state.main.currentLevel
 
 export default mainSlice.reducer

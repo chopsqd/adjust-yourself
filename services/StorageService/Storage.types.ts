@@ -1,5 +1,5 @@
 export enum ColorsEnum {
-    Blue = "#0295FF",
+    Blue = "#0295ff",
     Pink = "#E77EC3",
     Green = "#94C900",
     Orange = "#EA9026",
