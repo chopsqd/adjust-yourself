@@ -1,49 +1,53 @@
 import React from "react"
-import { Text, View } from "react-native"
+import { Pressable, Text, View } from "react-native"
 import { IAppLevelBoxProps } from "./AppLevelBox.types"
 import { styles } from "./AppLevelBox.style"
 import { lock } from "./AppLevelBox.utils"
 
 const AppLevelBox: React.FC<IAppLevelBoxProps> = (props) => {
-   const { title, disabled, fontSize } = props
+   const { title, disabled, fontSize, onPress } = props
 
    return (
-      <View
-         style={[
-            {
-               backgroundColor: disabled
-                  ? "rgba(183, 183, 183,.5)"
-                  : "none"
-            },
-            styles.bar
-         ]}
+      <Pressable
+         onPress={onPress}
       >
-         <Text
+         <View
             style={[
                {
-                  fontSize,
-                  color: disabled
-                     ? "#bababa"
-                     : "#000"
+                  backgroundColor: disabled
+                     ? "rgba(183, 183, 183,.5)"
+                     : "transparent"
                },
-               styles.title
+               styles.bar
             ]}
          >
-            {title}
-         </Text>
-         {disabled && (
-            <View
+            <Text
                style={[
                   {
-                     height: fontSize * 2.8
+                     fontSize,
+                     color: disabled
+                        ? "#bababa"
+                        : "#000"
                   },
-                  styles.lock
+                  styles.title
                ]}
             >
-               {lock}
-            </View>
-         )}
-      </View>
+               {title}
+            </Text>
+            {disabled && (
+               <View
+                  style={[
+                     {
+                        height: fontSize * 2.8
+                     },
+                     styles.lock
+                  ]}
+               >
+                  {lock}
+               </View>
+            )}
+         </View>
+      </Pressable>
    )
 }
 
