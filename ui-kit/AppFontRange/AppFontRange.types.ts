@@ -2,7 +2,7 @@ import { ColorsEnum, FontSizeEnum } from "../../services/StorageService/Storage.
 
 export interface IAppFontRangeProps {
    value: number
-   onChange: () => void
+   onChange: (e: number) => void
    fontSize: FontSizeEnum
    bgColor: ColorsEnum
 }
