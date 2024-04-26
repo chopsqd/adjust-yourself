@@ -79,7 +79,7 @@ const Settings: React.FC<ISettingsProps> = ({ navigation }) => {
             <View style={styles.row}>
                <Text style={styles.text}>ШРИФТ</Text>
                <AppFontRange
-                  value={fontSize}
+                  value={fontSizeEnumValues.indexOf(fontSize.toString())}
                   onChange={(e: number) => {
                      const selectedSize = fontSizeEnumValues[e]
 

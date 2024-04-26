@@ -3,7 +3,7 @@ import { ColorsEnum, FontSizeEnum, IStorageData } from "../../services/StorageSe
 import { RootStateType } from "../index"
 
 const initialState: IStorageData = {
-   currentLevel: 1,
+   currentLevel: 0,
    settings: {
       theme: "light",
       fontSize: FontSizeEnum.Medium,

@@ -26,7 +26,7 @@ const Home: React.FC<IHomeProps> = ({ navigation }) => {
                onPress={() => {
                   navigation.navigate("Lecture", { lecture: currentLevel })
                }}
-               title={"ПРОДОЛЖИТЬ"}
+               title={currentLevel === 0 ? "НАЧАТЬ" : "ПРОДОЛЖИТЬ"}
                bgColor={accent}
                fontSize={fontSize}
             />
