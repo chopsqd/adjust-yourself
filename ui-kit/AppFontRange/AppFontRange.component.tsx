@@ -21,8 +21,8 @@ const AppFontRange: React.FC<IAppFontRangeProps> = (props) => {
             onValueChange={onChange}
             style={{ width: 200, height: 40 }}
             step={1}
-            minimumValue={1}
-            maximumValue={4}
+            minimumValue={0}
+            maximumValue={3}
             minimumTrackTintColor={"#bebebe"}
             maximumTrackTintColor={"#000"}
             thumbTintColor={bgColor}
