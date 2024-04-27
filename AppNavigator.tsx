@@ -9,6 +9,7 @@ import { selectMainData, setMainData } from "./store/slices/main"
 import { AppState } from "react-native"
 import Settings from "./screens/Settings/Settings.component"
 import Lectures from "./screens/Lectures/Lectures.component"
+import Lecture from "./screens/Lecture/Lecture.component"
 
 const Stack = createNativeStackNavigator()
 
@@ -69,6 +70,11 @@ const AppNavigator = () => {
             <Stack.Screen
                name={"Lectures"}
                component={Lectures}
+               options={{ headerShown: false, statusBarStyle: "dark" }}
+            />
+            <Stack.Screen
+               name={"Lecture"}
+               component={Lecture}
                options={{ headerShown: false, statusBarStyle: "dark" }}
             />
          </Stack.Navigator>

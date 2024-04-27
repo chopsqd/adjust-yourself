@@ -55,6 +55,11 @@ const Lectures: React.FC<ILecturesProps> = ({ navigation }) => {
                   <AppLevelBox
                      key={theme}
                      title={theme}
+                     onPress={() => {
+                        if (currentLevel >= index) {
+                           navigation.navigate("Lecture", { lecture: currentLevel })
+                        }
+                     }}
                      disabled={currentLevel < index}
                      fontSize={fontSize}
                   />

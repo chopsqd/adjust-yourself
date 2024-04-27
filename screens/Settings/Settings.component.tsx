@@ -46,7 +46,7 @@ const Settings: React.FC<ISettingsProps> = ({ navigation }) => {
                <Text style={styles.text}>ТЕМА</Text>
                <Switch
                   trackColor={{ false: "#DEDEDE", true: "#DEDEDE" }}
-                  thumbColor={ColorsEnum.Blue}
+                  thumbColor={accent}
                   ios_backgroundColor={"#3e3e3e"}
                   onValueChange={toggleSwitch}
                   value={theme === "dark"}
