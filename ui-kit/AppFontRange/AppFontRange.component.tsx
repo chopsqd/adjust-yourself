@@ -3,14 +3,20 @@ import { View, Text, ScrollView } from "react-native"
 import Slider from "@react-native-community/slider"
 import { styles } from "./AppFontRange.style"
 import { IAppFontRangeProps } from "./AppFontRange.types"
+import { ThemeEnum } from "../../services/StorageService/Storage.types"
 
 const AppFontRange: React.FC<IAppFontRangeProps> = (props) => {
-   const { value, onChange, fontSize, bgColor } = props
+   const { value, onChange, fontSize, bgColor, theme } = props
 
    return (
       <View style={styles.range}>
          <ScrollView style={styles.container}>
-            <Text style={{ fontSize }}>
+            <Text
+               style={{
+                  fontSize,
+                  color: theme === ThemeEnum.dark ? "#FFF" : "#000"
+               }}
+            >
                JavaScript - это мощный язык программирования,
                который широко используется для создания интерактивных веб-сайтов и веб-приложений
             </Text>

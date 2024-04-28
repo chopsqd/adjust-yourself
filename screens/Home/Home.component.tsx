@@ -1,5 +1,5 @@
 import React from "react"
-import { Image, View, Alert } from "react-native"
+import { Image, View } from "react-native"
 import { INavigationProp } from "../../AppNavigator"
 import AppLayout from "../../ui-kit/AppLayout/AppLayout.component"
 import { AppButton } from "../../ui-kit"
@@ -13,11 +13,11 @@ interface IHomeProps {
 
 const Home: React.FC<IHomeProps> = ({ navigation }) => {
    const currentLevel = useAppSelector(selectCurrentLevel)
-   const { fontSize, accent } = useAppSelector(selectSettings)
+   const { fontSize, accent, theme } = useAppSelector(selectSettings)
 
    return (
       <View>
-         <AppLayout>
+         <AppLayout theme={theme}>
             <Image
                source={require("../../assets/Logo.png")}
                style={styles.image}
@@ -53,12 +53,9 @@ const Home: React.FC<IHomeProps> = ({ navigation }) => {
          <View style={styles.buttons}>
             <AppButton
                onPress={() => {
-                  Alert.alert(
-                     "Adjust Yourself",
-                     "Добро пожаловать!\nВ этом приложении ты можешь изучить основы языка JavaScript"
-                  )
+                  navigation.navigate("Creators")
                }}
-               title={"info"}
+               title={"team"}
                bgColor={accent}
                fontSize={fontSize}
             />

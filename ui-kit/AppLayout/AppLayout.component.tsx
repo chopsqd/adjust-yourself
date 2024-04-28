@@ -4,10 +4,17 @@ import { styles } from "./AppLayout.style"
 import { IAppLayoutProps } from "./AppLayout.types"
 
 const AppLayout: React.FC<IAppLayoutProps> = (props) => {
-   const { children } = props
+   const { children, theme } = props
 
    return (
-      <View style={styles.app}>
+      <View
+         style={[
+            styles.app,
+            {
+               backgroundColor: theme
+            }
+         ]}
+      >
          <View style={styles.container}>
             {children}
          </View>

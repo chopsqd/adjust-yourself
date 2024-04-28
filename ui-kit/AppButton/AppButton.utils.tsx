@@ -131,30 +131,137 @@ const arrow_right = (
    </Svg>
 )
 
+const code = (
+   <Svg
+      width={26}
+      height={26}
+      viewBox={"0 0 16 16"}
+      fill={"#fff"}
+      style={{ margin: 7 }}
+   >
+      <Path
+         d={"M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"}
+      />
+   </Svg>
+)
+
+const compile = (
+   <Svg
+      width={26}
+      height={26}
+      viewBox={"0 0 16 16"}
+      fill={"#fff"}
+      style={{ margin: 7 }}
+   >
+      <Path
+         d={"M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"}
+      />
+      <Path
+         fillRule={"evenodd"}
+         d={"M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"}
+      />
+   </Svg>
+)
+
+const edit = (
+   <Svg
+      width={26}
+      height={26}
+      viewBox={"0 0 24 24"}
+      fill={"none"}
+      stroke={"#fff"}
+      strokeWidth={1.5}
+      strokeLinecap={"round"}
+      strokeLinejoin={"round"}
+      style={{ margin: 7 }}
+   >
+      <Path d={"M12 20h9"}/>
+      <Path d={"M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"} fill={"none"}/>
+   </Svg>
+)
+
+const console = (
+   <Svg
+      width={26}
+      height={26}
+      viewBox={"0 0 16 16"}
+      style={{ margin: 7 }}
+   >
+      <Path
+         d={"M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"}
+         fill={"#fff"}
+      />
+      <Path
+         d={"M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"}
+         fill={"#fff"}
+      />
+   </Svg>
+)
+
+const team = (
+   <Svg
+      width={37}
+      height={37}
+      style={{ margin: 1.5 }}
+      viewBox={"0 0 512 512"}
+   >
+      <Path
+         d={"M256,464C141.31,464,48,370.69,48,256S141.31,48,256,48s208,93.31,208,208S370.69,464,256,464Zm0-384C159,80,80,159,80,256S159,432,256,432s176-78.95,176-176S353.05,80,256,80Z"}
+         fill={"#FFF"}
+      />
+      <Path
+         d={"M323.67,292c-17.4,0-34.21-7.72-47.34-21.73a83.76,83.76,0,0,1-22-51.32c-1.47-20.7,4.88-39.75,17.88-53.62S303.38,144,323.67,144c20.14,0,38.37,7.62,51.33,21.46s19.47,33,18,53.51h0a84,84,0,0,1-22,51.3C357.86,284.28,341.06,292,323.67,292Zm55.81-74h0Z"}
+         fill={"#FFF"}
+      />
+      <Path
+         d={"M163.82,295.36c-29.76,0-55.93-27.51-58.33-61.33-1.23-17.32,4.15-33.33,15.17-45.08s26.22-18,43.15-18,32.12,6.44,43.07,18.14,16.5,27.82,15.25,45C219.69,267.86,193.53,295.36,163.82,295.36Z"}
+         fill={"#FFF"}
+      />
+      <Path
+         d={"M420.37,355.28c-1.59-4.7-5.46-9.71-13.22-14.46-23.46-14.33-52.32-21.91-83.48-21.91-30.57,0-60.23,7.9-83.53,22.25-26.25,16.17-43.89,39.75-51,68.18-1.68,6.69-4.13,19.14-1.51,26.11a192.18,192.18,0,0,0,232.75-80.17Z"}
+         fill={"#FFF"}
+      />
+      <Path
+         d={"M163.63,401.37c7.07-28.21,22.12-51.73,45.47-70.75a8,8,0,0,0-2.59-13.77c-12-3.83-25.7-5.88-42.69-5.88-23.82,0-49.11,6.45-68.14,18.17-5.4,3.33-10.7,4.61-14.78,5.75a192.84,192.84,0,0,0,77.78,86.64l1.79-.14A102.82,102.82,0,0,1,163.63,401.37Z"}
+         fill={"#FFF"}
+      />
+   </Svg>
+)
+
 export const getContent = (title: string, fontSize?: FontSizeEnum): React.JSX.Element => {
    switch (title) {
-      case "gear":
-         return gear
-      case "home":
-         return home
-      case "question":
-         return question
-      case "info":
-         return info
-      case "arrow_left":
-         return arrow_left
-      case "arrow_right":
-         return arrow_right
-      default:
-         return (
-            <Text
-               style={[
-                  { fontSize },
-                  styles.text
-               ]}
-            >
-               {title}
-            </Text>
-         )
+   case "gear":
+      return gear
+   case "home":
+      return home
+   case "question":
+      return question
+   case "info":
+      return info
+   case "arrow_left":
+      return arrow_left
+   case "arrow_right":
+      return arrow_right
+   case "code":
+      return code
+   case "compile":
+      return compile
+   case "edit":
+      return edit
+   case "console":
+      return console
+   case "team":
+      return team
+   default:
+      return (
+         <Text
+            style={[
+               { fontSize },
+               styles.text
+            ]}
+         >
+            {title}
+         </Text>
+      )
    }
 }

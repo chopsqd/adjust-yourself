@@ -3,9 +3,10 @@ import { Pressable, Text, View } from "react-native"
 import { IAppLevelBoxProps } from "./AppLevelBox.types"
 import { styles } from "./AppLevelBox.style"
 import { lock } from "./AppLevelBox.utils"
+import { ThemeEnum } from "../../services/StorageService/Storage.types"
 
 const AppLevelBox: React.FC<IAppLevelBoxProps> = (props) => {
-   const { title, disabled, fontSize, onPress } = props
+   const { title, disabled, fontSize, onPress, theme } = props
 
    return (
       <Pressable
@@ -25,9 +26,11 @@ const AppLevelBox: React.FC<IAppLevelBoxProps> = (props) => {
                style={[
                   {
                      fontSize,
-                     color: disabled
-                        ? "#bababa"
-                        : "#000"
+                     color: theme === ThemeEnum.dark
+                        ? "#FFF"
+                        : disabled
+                           ? "#bababa"
+                           : "#000"
                   },
                   styles.title
                ]}

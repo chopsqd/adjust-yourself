@@ -4,7 +4,7 @@ import { AppButton, AppFontRange, AppHeader, AppLayout } from "../../ui-kit"
 import { INavigationProp } from "../../AppNavigator"
 import { useAppDispatch, useAppSelector } from "../../store/hooks"
 import { selectSettings, setSettingsAccent, setSettingsFontSize, setSettingsTheme } from "../../store/slices/main"
-import { ColorsEnum, FontSizeEnum } from "../../services/StorageService/Storage.types"
+import { ColorsEnum, FontSizeEnum, ThemeEnum } from "../../services/StorageService/Storage.types"
 import { styles } from "./Settings.style"
 
 interface ISettingsProps {
@@ -25,15 +25,19 @@ const Settings: React.FC<ISettingsProps> = ({ navigation }) => {
    }
 
    const toggleSwitch = () => {
-      if (theme === "dark") {
-         dispatch(setSettingsTheme("light"))
+      if (theme === ThemeEnum.light) {
+         dispatch(setSettingsTheme(ThemeEnum.dark))
       } else {
-         dispatch(setSettingsTheme("dark"))
+         dispatch(setSettingsTheme(ThemeEnum.light))
       }
    }
 
    return (
-      <View>
+      <View
+         style={{
+            backgroundColor: theme
+         }}
+      >
          <AppHeader
             onInfoPress={onInfoPress}
             navigation={navigation}
@@ -41,21 +45,42 @@ const Settings: React.FC<ISettingsProps> = ({ navigation }) => {
             bgColor={accent}
             fontSize={fontSize}
          />
-         <AppLayout>
+         <AppLayout theme={theme}>
             <View style={styles.row}>
-               <Text style={styles.text}>ТЕМА</Text>
+               <Text
+                  style={[
+                     styles.text,
+                     {
+                        color: theme === ThemeEnum.dark ? "#FFF" : "#000"
+                     }
+                  ]}
+               >
+                  ТЕМА
+               </Text>
                <Switch
-                  trackColor={{ false: "#DEDEDE", true: "#DEDEDE" }}
+                  trackColor={{
+                     false: ThemeEnum.dark,
+                     true: ThemeEnum.light
+                  }}
                   thumbColor={accent}
                   ios_backgroundColor={"#3e3e3e"}
                   onValueChange={toggleSwitch}
-                  value={theme === "dark"}
+                  value={theme === ThemeEnum.dark}
                   style={styles.switch}
                />
             </View>
 
             <View style={styles.row}>
-               <Text style={styles.text}>АКЦЕНТ</Text>
+               <Text
+                  style={[
+                     styles.text,
+                     {
+                        color: theme === ThemeEnum.dark ? "#FFF" : "#000"
+                     }
+                  ]}
+               >
+                  АКЦЕНТ
+               </Text>
                <View style={styles.accents}>
                   {Object.keys(ColorsEnum).map((key, index) => {
                      const color = ColorsEnum[key as keyof typeof ColorsEnum]
@@ -77,9 +102,19 @@ const Settings: React.FC<ISettingsProps> = ({ navigation }) => {
             </View>
 
             <View style={styles.row}>
-               <Text style={styles.text}>ШРИФТ</Text>
+               <Text
+                  style={[
+                     styles.text,
+                     {
+                        color: theme === ThemeEnum.dark ? "#FFF" : "#000"
+                     }
+                  ]}
+               >
+                  ШРИФТ
+               </Text>
                <AppFontRange
                   value={fontSizeEnumValues.indexOf(fontSize.toString())}
+                  theme={theme}
                   onChange={(e: number) => {
                      const selectedSize = fontSizeEnumValues[e]
 

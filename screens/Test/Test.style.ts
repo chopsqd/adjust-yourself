@@ -27,6 +27,7 @@ export const styles = StyleSheet.create({
    },
    questionText: {
       padding: 25,
+      paddingTop: 15,
       textAlign: "center",
       fontWeight: "bold"
    },
@@ -37,7 +38,6 @@ export const styles = StyleSheet.create({
    },
    buttons: {
       position: "absolute",
-      backgroundColor: "#fff",
       width: "100%",
       bottom: 0,
       paddingTop: 4,
