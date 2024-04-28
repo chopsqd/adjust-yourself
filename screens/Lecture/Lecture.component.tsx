@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { INavigationProp } from "../../AppNavigator"
 import { Alert, SafeAreaView, ScrollView, View } from "react-native"
 import Markdown from "react-native-markdown-display"
@@ -21,6 +21,7 @@ interface ILectureProps {
 const Lecture: React.FC<ILectureProps> = ({ navigation, route }) => {
    const [ lecture, setLecture ] = useState<ILecture | null>(null)
    const { fontSize, accent } = useAppSelector(selectSettings)
+   const scrollViewRef = useRef<ScrollView>(null)
 
    const onInfoPress = () => {
       Alert.alert(
@@ -52,6 +53,7 @@ const Lecture: React.FC<ILectureProps> = ({ navigation, route }) => {
                <ScrollView
                   contentInsetAdjustmentBehavior={"automatic"}
                   style={{ height: "90%" }}
+                  ref={scrollViewRef}
                >
                   <Markdown
                      style={{
@@ -67,6 +69,7 @@ const Lecture: React.FC<ILectureProps> = ({ navigation, route }) => {
                      style={styles.testBtn}
                      onPress={() => {
                         navigation.navigate("Test", { lecture: route.params.lecture })
+                        scrollViewRef.current!.scrollTo({ y: 0, animated: false })
                      }}
                      title={"Перейти к тесту"}
                      bgColor={accent}

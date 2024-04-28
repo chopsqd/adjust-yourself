@@ -57,7 +57,7 @@ const Lectures: React.FC<ILecturesProps> = ({ navigation }) => {
                      title={theme}
                      onPress={() => {
                         if (currentLevel >= index) {
-                           navigation.navigate("Lecture", { lecture: currentLevel })
+                           navigation.navigate("Lecture", { lecture: index })
                         }
                      }}
                      disabled={currentLevel < index}

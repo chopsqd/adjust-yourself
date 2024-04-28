@@ -11,6 +11,7 @@ import Settings from "./screens/Settings/Settings.component"
 import Lectures from "./screens/Lectures/Lectures.component"
 import Lecture from "./screens/Lecture/Lecture.component"
 import Test from "./screens/Test/Test.component"
+import TestResult from "./screens/TestResult/TestResult.component"
 
 const Stack = createNativeStackNavigator()
 
@@ -81,6 +82,11 @@ const AppNavigator = () => {
             <Stack.Screen
                name={"Test"}
                component={Test as FunctionComponent}
+               options={{ headerShown: false, statusBarStyle: "dark" }}
+            />
+            <Stack.Screen
+               name={"TestResult"}
+               component={TestResult as FunctionComponent}
                options={{ headerShown: false, statusBarStyle: "dark" }}
             />
          </Stack.Navigator>

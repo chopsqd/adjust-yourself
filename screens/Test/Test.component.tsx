@@ -6,7 +6,14 @@ import { useAppDispatch, useAppSelector } from "../../store/hooks"
 import { selectSettings } from "../../store/slices/main"
 import { styles } from "./Test.style"
 import { getTest } from "./Test.utils"
-import { addAnswer, nextCurrentQuestion, prevCurrentQuestion, selectTestData, setTest } from "../../store/slices/test"
+import {
+   addAnswer,
+   nextCurrentQuestion,
+   prevCurrentQuestion,
+   resetTestState,
+   selectTestData,
+   setTest
+} from "../../store/slices/test"
 import { IOption, ITest } from "../../content"
 
 interface ITestProps {
@@ -27,6 +34,7 @@ const Test: React.FC<ITestProps> = ({ navigation, route }) => {
    useEffect(() => {
       const testFromParams = getTest(route.params.lecture)
       dispatch(setTest(testFromParams))
+      dispatch(resetTestState())
    }, [])
 
    if (!test) {
@@ -52,9 +60,9 @@ const Test: React.FC<ITestProps> = ({ navigation, route }) => {
    }
 
    const onNextPress = () => {
+      scrollToTop()
       if (currentQuestion < test.length - 1) {
          dispatch(nextCurrentQuestion())
-         scrollToTop()
       } else {
          navigation.navigate("TestResult", { lecture: route.params.lecture })
       }

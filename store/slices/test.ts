@@ -31,7 +31,11 @@ const testSlice = createSlice({
          state.allAnswers[state.currentQuestion] = action.payload
       },
 
-      clearTestData: () => initialState
+      resetTestState (state: ITestState) {
+         state.currentQuestion = 0
+         state.allAnswers = []
+      },
+      clearTestState: () => initialState
    }
 })
 
@@ -39,7 +43,9 @@ export const {
    setTest,
    prevCurrentQuestion,
    nextCurrentQuestion,
-   addAnswer
+   addAnswer,
+   resetTestState,
+   clearTestState
 } = testSlice.actions
 
 export const selectTestData = (state: RootStateType) => state.test
