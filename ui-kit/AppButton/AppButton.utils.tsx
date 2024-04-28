@@ -131,6 +131,55 @@ const arrow_right = (
    </Svg>
 )
 
+const code = (
+   <Svg
+      width={26}
+      height={26}
+      viewBox={"0 0 16 16"}
+      fill={"#fff"}
+      style={{ margin: 7 }}
+   >
+      <Path
+         d={"M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"}
+      />
+   </Svg>
+)
+
+const compile = (
+   <Svg
+      width={26}
+      height={26}
+      viewBox={"0 0 16 16"}
+      fill={"#fff"}
+      style={{ margin: 7 }}
+   >
+      <Path
+         d={"M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"}
+      />
+      <Path
+         fillRule={"evenodd"}
+         d={"M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"}
+      />
+   </Svg>
+)
+
+const edit = (
+   <Svg
+      width={26}
+      height={26}
+      viewBox={"0 0 24 24"}
+      fill={"none"}
+      stroke={"#fff"}
+      strokeWidth={1.5}
+      strokeLinecap={"round"}
+      strokeLinejoin={"round"}
+      style={{ margin: 7 }}
+   >
+      <Path d={"M12 20h9"} />
+      <Path d={"M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"} />
+   </Svg>
+)
+
 export const getContent = (title: string, fontSize?: FontSizeEnum): React.JSX.Element => {
    switch (title) {
       case "gear":
@@ -145,6 +194,12 @@ export const getContent = (title: string, fontSize?: FontSizeEnum): React.JSX.El
          return arrow_left
       case "arrow_right":
          return arrow_right
+      case "code":
+         return code
+      case "compile":
+         return compile
+      case "edit":
+         return edit
       default:
          return (
             <Text
