@@ -114,6 +114,7 @@ const Settings: React.FC<ISettingsProps> = ({ navigation }) => {
                </Text>
                <AppFontRange
                   value={fontSizeEnumValues.indexOf(fontSize.toString())}
+                  theme={theme}
                   onChange={(e: number) => {
                      const selectedSize = fontSizeEnumValues[e]
 

@@ -55,7 +55,7 @@ const Home: React.FC<IHomeProps> = ({ navigation }) => {
                onPress={() => {
                   navigation.navigate("Creators")
                }}
-               title={"info"}
+               title={"team"}
                bgColor={accent}
                fontSize={fontSize}
             />
