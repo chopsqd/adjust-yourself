@@ -8,12 +8,12 @@ on:
 
 jobs:
   build:
+    name: Notify
     runs-on: ubuntu-latest
-
     steps:
-    - name: Send a Telegram message
-      env:
-        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-      run: |
-        curl -s -X POST https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage -H "Content-Type: application/json" -d '{"chat_id": "${TELEGRAM_CHAT_ID}", "text": "Новая версия приложения уже доступна!"}'
+      - name: send telegram message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: Новая версия приложения уже доступна
