@@ -5,13 +5,14 @@ import { styles } from "./SandBox.style"
 import AppButton from "../../ui-kit/AppButton/AppButton.component"
 import { useAppSelector } from "../../store/hooks"
 import { selectSettings } from "../../store/slices/main"
+import { ThemeEnum } from "../../services/StorageService/Storage.types"
 
 interface ISandBoxProps {
    navigation: INavigationProp
 }
 
 const SandBox: React.FC<ISandBoxProps> = ({ navigation }) => {
-   const { fontSize, accent } = useAppSelector(selectSettings)
+   const { fontSize, accent, theme } = useAppSelector(selectSettings)
    const [ codeInput, setCodeInput ] = useState<string>("")
    const [ consoleOutput, setConsoleOutput ] = useState<string>("")
    const [ isResultView, setIsResultView ] = useState<boolean>(false)
@@ -42,7 +43,14 @@ const SandBox: React.FC<ISandBoxProps> = ({ navigation }) => {
    }
 
    return (
-      <View style={styles.container}>
+      <View
+         style={[
+            styles.container,
+            {
+               backgroundColor: theme
+            }
+         ]}
+      >
          <View style={styles.header}>
             <AppButton
                fontSize={fontSize}
@@ -56,7 +64,8 @@ const SandBox: React.FC<ISandBoxProps> = ({ navigation }) => {
                   style={[
                      styles.headerText,
                      {
-                        fontSize
+                        fontSize,
+                        color: theme === ThemeEnum.dark ? "#FFF" : "#000"
                      }
                   ]}
                >
@@ -82,8 +91,21 @@ const SandBox: React.FC<ISandBoxProps> = ({ navigation }) => {
 
          {isResultView
             ? (
-               <ScrollView style={styles.result}>
-                  <Text style={{ fontSize }}>{consoleOutput}</Text>
+               <ScrollView
+                  style={[
+                     styles.result,
+                     {
+                        backgroundColor: theme
+                     }
+                  ]}>
+                  <Text
+                     style={{
+                        fontSize,
+                        color: theme === ThemeEnum.dark ? "#FFF" : "#000"
+                     }}
+                  >
+                     {consoleOutput}
+                  </Text>
                </ScrollView>
             ) : (
                <TextInput
@@ -101,11 +123,14 @@ const SandBox: React.FC<ISandBoxProps> = ({ navigation }) => {
                      styles.codeBox,
                      {
                         fontSize,
+                        backgroundColor: theme,
+                        color: theme === ThemeEnum.dark ? "#FFF" : "#000",
                         height: Keyboard.metrics()
                            ? Dimensions.get("window").height - Keyboard.metrics()!.height - 100
-                           : 200
+                           : "100%"
                      }
                   ]}
+                  placeholderTextColor={"#939393"}
                   placeholder={"Введите ваш код здесь"}
                   onChangeText={text => {
                      setCodeInput(text)

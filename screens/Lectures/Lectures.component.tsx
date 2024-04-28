@@ -24,7 +24,7 @@ interface ILecturesProps {
 
 const Lectures: React.FC<ILecturesProps> = ({ navigation }) => {
    const currentLevel = useAppSelector(selectCurrentLevel)
-   const { fontSize, accent } = useAppSelector(selectSettings)
+   const { fontSize, accent, theme } = useAppSelector(selectSettings)
 
    const onInfoPress = () => {
       Alert.alert(
@@ -34,7 +34,11 @@ const Lectures: React.FC<ILecturesProps> = ({ navigation }) => {
    }
 
    return (
-      <View>
+      <View
+         style={{
+            backgroundColor: theme
+         }}
+      >
          <AppHeader
             onInfoPress={onInfoPress}
             navigation={navigation}
@@ -42,7 +46,7 @@ const Lectures: React.FC<ILecturesProps> = ({ navigation }) => {
             bgColor={accent}
             fontSize={fontSize}
          />
-         <AppLayout>
+         <AppLayout theme={theme}>
             <AppProgressBar
                fontSize={fontSize}
                title={"Пройдено тем"}
@@ -52,10 +56,11 @@ const Lectures: React.FC<ILecturesProps> = ({ navigation }) => {
             <ScrollView
                style={{ height: THEMES.length * 49 }}
             >
-               {THEMES.map((theme: string, index: number) => (
+               {THEMES.map((lectureTheme: string, index: number) => (
                   <AppLevelBox
-                     key={theme}
-                     title={theme}
+                     key={lectureTheme}
+                     theme={theme}
+                     title={lectureTheme}
                      onPress={() => {
                         if (currentLevel >= index) {
                            navigation.navigate("Lecture", { lecture: index })

@@ -15,6 +15,7 @@ import {
    setTest
 } from "../../store/slices/test"
 import { IOption, ITest } from "../../content"
+import { ThemeEnum } from "../../services/StorageService/Storage.types"
 
 interface ITestProps {
    navigation: INavigationProp
@@ -27,9 +28,11 @@ interface ITestProps {
 
 const Test: React.FC<ITestProps> = ({ navigation, route }) => {
    const dispatch = useAppDispatch()
-   const { fontSize, accent } = useAppSelector(selectSettings)
+   const { fontSize, accent, theme } = useAppSelector(selectSettings)
    const { test, allAnswers, currentQuestion } = useAppSelector(selectTestData)
+
    const scrollViewRef = useRef<ScrollView>(null)
+   const questionViewRef = useRef<ScrollView>(null)
 
    useEffect(() => {
       const testFromParams = getTest(route.params.lecture)
@@ -43,6 +46,7 @@ const Test: React.FC<ITestProps> = ({ navigation, route }) => {
 
    const scrollToTop = () => {
       scrollViewRef.current!.scrollTo({ y: 0, animated: false })
+      questionViewRef.current!.scrollTo({ y: 0, animated: false })
    }
 
    const onInfoPress = () => {
@@ -69,7 +73,11 @@ const Test: React.FC<ITestProps> = ({ navigation, route }) => {
    }
 
    return (
-      <View>
+      <View
+         style={{
+            backgroundColor: theme
+         }}
+      >
          <AppHeader
             onInfoPress={onInfoPress}
             navigation={navigation}
@@ -77,7 +85,7 @@ const Test: React.FC<ITestProps> = ({ navigation, route }) => {
             bgColor={accent}
             fontSize={fontSize}
          />
-         <AppLayout>
+         <AppLayout theme={theme}>
             <View style={styles.container}>
                <View style={styles.bar}>
                   {test.map((item: ITest, index: number) => (
@@ -97,10 +105,16 @@ const Test: React.FC<ITestProps> = ({ navigation, route }) => {
                   ))}
                </View>
 
-               <ScrollView style={styles.questionBox}>
+               <ScrollView
+                  ref={questionViewRef}
+                  style={styles.questionBox}
+               >
                   <Text
                      style={[
-                        { fontSize: fontSize * 1.3 },
+                        {
+                           fontSize: fontSize * 1.3,
+                           color: theme === ThemeEnum.dark ? "#FFF" : "#000"
+                        },
                         styles.questionText
                      ]}
                   >
@@ -117,7 +131,9 @@ const Test: React.FC<ITestProps> = ({ navigation, route }) => {
                         style={{
                            marginBottom: 5,
                            width: "100%",
-                           borderColor: allAnswers[currentQuestion]?.answer === option.answer ? "black" : "transparent",
+                           borderColor: allAnswers[currentQuestion]?.answer === option.answer
+                              ? theme === ThemeEnum.dark ? "#FFF" : "#000"
+                              : "transparent",
                            borderWidth: 3
                         }}
                         key={option.answer}
@@ -131,7 +147,14 @@ const Test: React.FC<ITestProps> = ({ navigation, route }) => {
                   ))}
                </ScrollView>
 
-               <View style={styles.buttons}>
+               <View
+                  style={[
+                     styles.buttons,
+                     {
+                        backgroundColor: theme
+                     }
+                  ]}
+               >
                   <AppButton
                      onPress={onPrevPress}
                      title={"Назад"}

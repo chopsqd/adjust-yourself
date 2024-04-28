@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { ColorsEnum, FontSizeEnum, IStorageData } from "../../services/StorageService/Storage.types"
+import { ColorsEnum, FontSizeEnum, IStorageData, ThemeEnum } from "../../services/StorageService/Storage.types"
 import { RootStateType } from "../index"
 
 const initialState: IStorageData = {
    currentLevel: 0,
    settings: {
-      theme: "light",
+      theme: ThemeEnum.light,
       fontSize: FontSizeEnum.Medium,
       accent: ColorsEnum.Blue
    }

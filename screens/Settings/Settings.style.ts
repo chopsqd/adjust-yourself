@@ -21,6 +21,7 @@ export const styles = StyleSheet.create({
    accents: {
       maxWidth: 107,
       flexDirection: "row",
+      gap: 3,
       flexWrap: "wrap"
    }
 })

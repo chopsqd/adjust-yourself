@@ -20,7 +20,7 @@ interface ITestResultProps {
 const TestResult: React.FC<ITestResultProps> = ({ navigation, route }) => {
    const dispatch = useAppDispatch()
    const currentLevel = useAppSelector(selectCurrentLevel)
-   const { fontSize, accent } = useAppSelector(selectSettings)
+   const { fontSize, accent, theme } = useAppSelector(selectSettings)
    const { test, allAnswers } = useAppSelector(selectTestData)
    const [ availableCount, setAvailableCount ] = useState<number>(0)
 
@@ -56,7 +56,11 @@ const TestResult: React.FC<ITestResultProps> = ({ navigation, route }) => {
    }
 
    return (
-      <View>
+      <View
+         style={{
+            backgroundColor: theme
+         }}
+      >
          <AppHeader
             onInfoPress={onInfoPress}
             navigation={navigation}
@@ -64,7 +68,7 @@ const TestResult: React.FC<ITestResultProps> = ({ navigation, route }) => {
             bgColor={accent}
             fontSize={fontSize}
          />
-         <AppLayout>
+         <AppLayout theme={theme}>
             <AppProgressBar
                title={"Правильных ответов"}
                total={5}
@@ -93,7 +97,7 @@ const TestResult: React.FC<ITestResultProps> = ({ navigation, route }) => {
                <AppButton
                   onPress={onContinuePress}
                   disabled={availableCount < 3}
-                  title={availableCount < 3 ? `${availableCount} / 5` : "Далее" }
+                  title={availableCount < 3 ? `${availableCount} / 5` : "Далее"}
                   bgColor={accent}
                   fontSize={fontSize}
                />

@@ -8,6 +8,7 @@ import { selectSettings } from "../../store/slices/main"
 import { getLecture } from "./Lecture.utils"
 import { ILecture } from "../../content"
 import { styles } from "./Lecture.style"
+import { ThemeEnum } from "../../services/StorageService/Storage.types"
 
 interface ILectureProps {
    navigation: INavigationProp
@@ -20,7 +21,7 @@ interface ILectureProps {
 
 const Lecture: React.FC<ILectureProps> = ({ navigation, route }) => {
    const [ lecture, setLecture ] = useState<ILecture | null>(null)
-   const { fontSize, accent } = useAppSelector(selectSettings)
+   const { fontSize, accent, theme } = useAppSelector(selectSettings)
    const scrollViewRef = useRef<ScrollView>(null)
 
    const onInfoPress = () => {
@@ -40,7 +41,11 @@ const Lecture: React.FC<ILectureProps> = ({ navigation, route }) => {
    }
 
    return (
-      <View>
+      <View
+         style={{
+            backgroundColor: theme
+         }}
+      >
          <AppHeader
             onInfoPress={onInfoPress}
             navigation={navigation}
@@ -48,7 +53,7 @@ const Lecture: React.FC<ILectureProps> = ({ navigation, route }) => {
             bgColor={accent}
             fontSize={fontSize}
          />
-         <AppLayout>
+         <AppLayout theme={theme}>
             <SafeAreaView>
                <ScrollView
                   contentInsetAdjustmentBehavior={"automatic"}
@@ -57,9 +62,18 @@ const Lecture: React.FC<ILectureProps> = ({ navigation, route }) => {
                >
                   <Markdown
                      style={{
-                        body: { fontSize },
-                        heading3: { fontSize: fontSize * 1.2 },
-                        code_block: { fontSize }
+                        body: {
+                           fontSize,
+                           color: theme === ThemeEnum.dark ? "#FFF" : "#000"
+                        },
+                        heading3: {
+                           fontSize: fontSize * 1.2,
+                           color: theme === ThemeEnum.dark ? "#FFF" : "#000"
+                        },
+                        code_block: {
+                           fontSize,
+                           color: theme === ThemeEnum.dark ? "#FFF" : "#000"
+                        }
                      }}
                   >
                      {lecture.text}

@@ -28,11 +28,10 @@ export const styles = StyleSheet.create({
    },
    codeBox: {
       width: "100%",
-      backgroundColor: "#F2F2F2",
       padding: 5
    },
    result: {
-      backgroundColor: "#F2F2F2",
+      height: "100%",
       padding: 5
    }
 })
