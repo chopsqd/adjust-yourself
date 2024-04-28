@@ -86,6 +86,31 @@ describe("getContent function", () => {
       expect(arrowRight).toMatchSnapshot()
    })
 
+   it("returns code SVG element", () => {
+      const code = renderer.create(getContent("code")).toJSON()
+      expect(code).toMatchSnapshot()
+   })
+
+   it("returns compile SVG element", () => {
+      const compile = renderer.create(getContent("compile")).toJSON()
+      expect(compile).toMatchSnapshot()
+   })
+
+   it("returns edit SVG element", () => {
+      const edit = renderer.create(getContent("edit")).toJSON()
+      expect(edit).toMatchSnapshot()
+   })
+
+   it("returns console SVG element", () => {
+      const console = renderer.create(getContent("console")).toJSON()
+      expect(console).toMatchSnapshot()
+   })
+
+   it("returns team SVG element", () => {
+      const team = renderer.create(getContent("team")).toJSON()
+      expect(team).toMatchSnapshot()
+   })
+
    it("returns Text element for unknown title", () => {
       const text = renderer.create(getContent("unknown")).toJSON()
       expect(text).toMatchSnapshot()

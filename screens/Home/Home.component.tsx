@@ -4,7 +4,7 @@ import { INavigationProp } from "../../AppNavigator"
 import AppLayout from "../../ui-kit/AppLayout/AppLayout.component"
 import { AppButton } from "../../ui-kit"
 import { useAppSelector } from "../../store/hooks"
-import { selectCurrentLevel, selectSettings } from "../../store/slices/main"
+import { selectCurrentLevel, selectSettings } from "../../store/slices/mainSlice"
 import { styles } from "./Home.style"
 
 interface IHomeProps {

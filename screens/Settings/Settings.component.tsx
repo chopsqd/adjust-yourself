@@ -3,7 +3,7 @@ import { Alert, Switch, Text, View } from "react-native"
 import { AppButton, AppFontRange, AppHeader, AppLayout } from "../../ui-kit"
 import { INavigationProp } from "../../AppNavigator"
 import { useAppDispatch, useAppSelector } from "../../store/hooks"
-import { selectSettings, setSettingsAccent, setSettingsFontSize, setSettingsTheme } from "../../store/slices/main"
+import { selectSettings, setSettingsAccent, setSettingsFontSize, setSettingsTheme } from "../../store/slices/mainSlice"
 import { ColorsEnum, FontSizeEnum, ThemeEnum } from "../../services/StorageService/Storage.types"
 import { styles } from "./Settings.style"
 

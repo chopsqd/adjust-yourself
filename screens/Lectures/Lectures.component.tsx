@@ -1,6 +1,6 @@
 import React from "react"
 import { useAppSelector } from "../../store/hooks"
-import { selectCurrentLevel, selectSettings } from "../../store/slices/main"
+import { selectCurrentLevel, selectSettings } from "../../store/slices/mainSlice"
 import { INavigationProp } from "../../AppNavigator"
 import { Alert, ScrollView, View } from "react-native"
 import { AppHeader, AppLayout, AppLevelBox, AppProgressBar } from "../../ui-kit"

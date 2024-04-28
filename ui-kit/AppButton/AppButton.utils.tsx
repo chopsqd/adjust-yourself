@@ -175,8 +175,8 @@ const edit = (
       strokeLinejoin={"round"}
       style={{ margin: 7 }}
    >
-      <Path d={"M12 20h9"}/>
-      <Path d={"M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"} fill={"none"}/>
+      <Path d={"M12 20h9"} />
+      <Path d={"M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"} fill={"none"} />
    </Svg>
 )
 
@@ -230,38 +230,38 @@ const team = (
 
 export const getContent = (title: string, fontSize?: FontSizeEnum): React.JSX.Element => {
    switch (title) {
-   case "gear":
-      return gear
-   case "home":
-      return home
-   case "question":
-      return question
-   case "info":
-      return info
-   case "arrow_left":
-      return arrow_left
-   case "arrow_right":
-      return arrow_right
-   case "code":
-      return code
-   case "compile":
-      return compile
-   case "edit":
-      return edit
-   case "console":
-      return console
-   case "team":
-      return team
-   default:
-      return (
-         <Text
-            style={[
-               { fontSize },
-               styles.text
-            ]}
-         >
-            {title}
-         </Text>
-      )
+      case "gear":
+         return gear
+      case "home":
+         return home
+      case "question":
+         return question
+      case "info":
+         return info
+      case "arrow_left":
+         return arrow_left
+      case "arrow_right":
+         return arrow_right
+      case "code":
+         return code
+      case "compile":
+         return compile
+      case "edit":
+         return edit
+      case "console":
+         return console
+      case "team":
+         return team
+      default:
+         return (
+            <Text
+               style={[
+                  { fontSize },
+                  styles.text
+               ]}
+            >
+               {title}
+            </Text>
+         )
    }
 }

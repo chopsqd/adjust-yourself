@@ -1,7 +1,7 @@
 import React from "react"
 import { View, Text, Alert } from "react-native"
 import { useAppSelector } from "../../store/hooks"
-import { selectSettings } from "../../store/slices/main"
+import { selectSettings } from "../../store/slices/mainSlice"
 import { AppHeader, AppLayout } from "../../ui-kit"
 import { INavigationProp } from "../../AppNavigator"
 import { styles } from "./Creators.style"

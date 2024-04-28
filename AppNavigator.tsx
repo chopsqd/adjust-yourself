@@ -3,7 +3,7 @@ import { NavigationContainer } from "@react-navigation/native"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import { useAppDispatch, useAppSelector } from "./store/hooks"
 import { StorageService } from "./services/StorageService/Storage.service"
-import { selectMainData, setMainData } from "./store/slices/main"
+import { selectMainData, setMainData } from "./store/slices/mainSlice"
 import { AppState } from "react-native"
 import {
    Home, Lectures, Lecture, Creators,
