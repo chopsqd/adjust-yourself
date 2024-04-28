@@ -4,7 +4,7 @@ import { styles } from "./AppProgressBar.style"
 import { IAppProgressBarProps } from "./AppProgressBar.types"
 
 const AppProgressBar: React.FC<IAppProgressBarProps> = (props) => {
-   const { title, complete, fontSize } = props
+   const { title, complete, fontSize, total } = props
 
    return (
       <View
@@ -14,7 +14,7 @@ const AppProgressBar: React.FC<IAppProgressBarProps> = (props) => {
             style={[
                styles.progress,
                {
-                  width: `${complete * 10.7}%`
+                  width: `${complete * (107 / total)}%`
                }
             ]}
          />
@@ -24,7 +24,7 @@ const AppProgressBar: React.FC<IAppProgressBarProps> = (props) => {
                styles.title
             ]}
          >
-            {title} {complete}/10
+            {title} {complete}/{total}
          </Text>
       </View>
    )

@@ -15,6 +15,10 @@ const mainSlice = createSlice({
    name: "main",
    initialState,
    reducers: {
+      setMainData (state: IStorageData, action: PayloadAction<IStorageData>) {
+         state.settings = action.payload.settings
+         state.currentLevel = action.payload.currentLevel
+      },
       setCurrentLevel (state: IStorageData, action: PayloadAction<number>) {
          state.currentLevel = action.payload
       },
@@ -31,12 +35,14 @@ const mainSlice = createSlice({
 })
 
 export const {
+   setMainData,
    setCurrentLevel,
    setSettingsTheme,
    setSettingsFontSize,
    setSettingsAccent
 } = mainSlice.actions
 
+export const selectMainData = (state: RootStateType) => state.main
 export const selectSettings = (state: RootStateType) => state.main.settings
 export const selectCurrentLevel = (state: RootStateType) => state.main.currentLevel
 

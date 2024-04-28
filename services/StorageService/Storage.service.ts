@@ -2,12 +2,13 @@ import AsyncStorage from "@react-native-async-storage/async-storage"
 import { IStorageData } from "./Storage.types"
 
 export class StorageService {
-   public static async getData (): Promise<IStorageData> {
+   public static async getData (): Promise<IStorageData | null> {
       try {
          const data = await AsyncStorage.getItem("data")
 
          if (!data) {
-            throw new Error("Данные отсутствуют")
+            // Первое открытие приложения | данных нет
+            return null
          }
 
          return JSON.parse(data)

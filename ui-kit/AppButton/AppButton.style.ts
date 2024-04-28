@@ -15,6 +15,7 @@ export const styles = StyleSheet.create({
       fontSize: 16,
       lineHeight: 21,
       fontWeight: "bold",
+      textAlign: "center",
       letterSpacing: 0.25,
       color: "white"
    }
