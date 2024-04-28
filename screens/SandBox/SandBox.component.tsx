@@ -68,13 +68,13 @@ const SandBox: React.FC<ISandBoxProps> = ({ navigation }) => {
                <AppButton
                   fontSize={fontSize}
                   onPress={onModeTogglePress}
-                  title={"home"}
+                  title={isResultView ? "edit" : "console"}
                   bgColor={accent}
                />
                <AppButton
                   fontSize={fontSize}
                   onPress={onCompilePress}
-                  title={"home"}
+                  title={"compile"}
                   bgColor={accent}
                />
             </View>
