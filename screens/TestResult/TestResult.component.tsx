@@ -20,13 +20,9 @@ interface ITestResultProps {
 const TestResult: React.FC<ITestResultProps> = ({ navigation, route }) => {
    const dispatch = useAppDispatch()
    const currentLevel = useAppSelector(selectCurrentLevel)
-   const { fontSize, accent } = useAppSelector(selectSettings)
+   const { fontSize, accent, theme } = useAppSelector(selectSettings)
    const { test, allAnswers } = useAppSelector(selectTestData)
    const [ availableCount, setAvailableCount ] = useState<number>(0)
-
-   if (!test) {
-      return null
-   }
 
    useEffect(() => {
       const filteredAnswers = allAnswers.filter((item: IOption) => item.isCorrect)
@@ -55,8 +51,16 @@ const TestResult: React.FC<ITestResultProps> = ({ navigation, route }) => {
       }
    }
 
+   if (!test) {
+      return null
+   }
+
    return (
-      <View>
+      <View
+         style={{
+            backgroundColor: theme
+         }}
+      >
          <AppHeader
             onInfoPress={onInfoPress}
             navigation={navigation}
@@ -64,10 +68,11 @@ const TestResult: React.FC<ITestResultProps> = ({ navigation, route }) => {
             bgColor={accent}
             fontSize={fontSize}
          />
-         <AppLayout>
+         <AppLayout theme={theme}>
             <AppProgressBar
                title={"Правильных ответов"}
-               complete={7}
+               total={5}
+               complete={availableCount}
                fontSize={fontSize}
             />
             <ScrollView style={styles.answers}>
@@ -92,7 +97,7 @@ const TestResult: React.FC<ITestResultProps> = ({ navigation, route }) => {
                <AppButton
                   onPress={onContinuePress}
                   disabled={availableCount < 3}
-                  title={availableCount < 3 ? `${availableCount} / 5` : "Далее" }
+                  title={availableCount < 3 ? `${availableCount} / 5` : "Далее"}
                   bgColor={accent}
                   fontSize={fontSize}
                />

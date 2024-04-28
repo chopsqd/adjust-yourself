@@ -5,7 +5,10 @@ import { useAppDispatch, useAppSelector } from "./store/hooks"
 import { StorageService } from "./services/StorageService/Storage.service"
 import { selectMainData, setMainData } from "./store/slices/main"
 import { AppState } from "react-native"
-import { Home, Lectures, Lecture, Creators, Test, TestResult, Settings } from "./screens"
+import {
+   Home, Lectures, Lecture, Creators,
+   Test, TestResult, Settings, SandBox
+} from "./screens"
 
 const Stack = createNativeStackNavigator()
 
@@ -47,7 +50,7 @@ const AppNavigator = () => {
 
    return (
       <NavigationContainer>
-         <Stack.Navigator initialRouteName={"Lectures"}>
+         <Stack.Navigator initialRouteName={"Home"}>
             <Stack.Screen
                name={"Home"}
                component={Home}
@@ -81,6 +84,11 @@ const AppNavigator = () => {
             <Stack.Screen
                name={"TestResult"}
                component={TestResult as FunctionComponent}
+               options={{ headerShown: false, statusBarStyle: "dark" }}
+            />
+            <Stack.Screen
+               name={"SandBox"}
+               component={SandBox}
                options={{ headerShown: false, statusBarStyle: "dark" }}
             />
          </Stack.Navigator>

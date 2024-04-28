@@ -4,7 +4,7 @@ import { AppButton, AppFontRange, AppHeader, AppLayout } from "../../ui-kit"
 import { INavigationProp } from "../../AppNavigator"
 import { useAppDispatch, useAppSelector } from "../../store/hooks"
 import { selectSettings, setSettingsAccent, setSettingsFontSize, setSettingsTheme } from "../../store/slices/main"
-import { ColorsEnum, FontSizeEnum } from "../../services/StorageService/Storage.types"
+import { ColorsEnum, FontSizeEnum, ThemeEnum } from "../../services/StorageService/Storage.types"
 import { styles } from "./Settings.style"
 
 interface ISettingsProps {
@@ -25,15 +25,19 @@ const Settings: React.FC<ISettingsProps> = ({ navigation }) => {
    }
 
    const toggleSwitch = () => {
-      if (theme === "dark") {
-         dispatch(setSettingsTheme("light"))
+      if (theme === ThemeEnum.light) {
+         dispatch(setSettingsTheme(ThemeEnum.dark))
       } else {
-         dispatch(setSettingsTheme("dark"))
+         dispatch(setSettingsTheme(ThemeEnum.light))
       }
    }
 
    return (
-      <View>
+      <View
+         style={{
+            backgroundColor: theme
+         }}
+      >
          <AppHeader
             onInfoPress={onInfoPress}
             navigation={navigation}
@@ -41,15 +45,18 @@ const Settings: React.FC<ISettingsProps> = ({ navigation }) => {
             bgColor={accent}
             fontSize={fontSize}
          />
-         <AppLayout>
+         <AppLayout theme={theme}>
             <View style={styles.row}>
                <Text style={styles.text}>ТЕМА</Text>
                <Switch
-                  trackColor={{ false: "#DEDEDE", true: "#DEDEDE" }}
+                  trackColor={{
+                     false: ThemeEnum.dark,
+                     true: ThemeEnum.light
+                  }}
                   thumbColor={accent}
                   ios_backgroundColor={"#3e3e3e"}
                   onValueChange={toggleSwitch}
-                  value={theme === "dark"}
+                  value={theme === ThemeEnum.dark}
                   style={styles.switch}
                />
             </View>

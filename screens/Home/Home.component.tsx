@@ -13,11 +13,11 @@ interface IHomeProps {
 
 const Home: React.FC<IHomeProps> = ({ navigation }) => {
    const currentLevel = useAppSelector(selectCurrentLevel)
-   const { fontSize, accent } = useAppSelector(selectSettings)
+   const { fontSize, accent, theme } = useAppSelector(selectSettings)
 
    return (
       <View>
-         <AppLayout>
+         <AppLayout theme={theme}>
             <Image
                source={require("../../assets/Logo.png")}
                style={styles.image}

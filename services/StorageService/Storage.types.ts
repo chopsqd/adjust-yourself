@@ -14,9 +14,14 @@ export enum FontSizeEnum {
     ExtraLarge = 18
 }
 
+export enum ThemeEnum {
+    dark = "#4d4d4d",
+    light = "#FFFFFF"
+}
+
 export interface IStorageData {
     settings: {
-        theme: "dark" | "light"
+        theme: ThemeEnum
         accent: ColorsEnum
         fontSize: FontSizeEnum
     }
