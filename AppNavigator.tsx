@@ -1,17 +1,11 @@
 import React, { FunctionComponent, useEffect, useRef } from "react"
 import { NavigationContainer } from "@react-navigation/native"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
-import Creators from "./screens/Creators/Creators.component"
-import Home from "./screens/Home/Home.component"
 import { useAppDispatch, useAppSelector } from "./store/hooks"
 import { StorageService } from "./services/StorageService/Storage.service"
 import { selectMainData, setMainData } from "./store/slices/main"
 import { AppState } from "react-native"
-import Settings from "./screens/Settings/Settings.component"
-import Lectures from "./screens/Lectures/Lectures.component"
-import Lecture from "./screens/Lecture/Lecture.component"
-import Test from "./screens/Test/Test.component"
-import TestResult from "./screens/TestResult/TestResult.component"
+import { Home, Lectures, Lecture, Creators, Test, TestResult, Settings } from "./screens"
 
 const Stack = createNativeStackNavigator()
 

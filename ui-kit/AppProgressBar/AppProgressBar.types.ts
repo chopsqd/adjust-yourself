@@ -4,4 +4,5 @@ export interface IAppProgressBarProps {
    title: string
    complete: number
    fontSize: FontSizeEnum
+   total: number
 }
