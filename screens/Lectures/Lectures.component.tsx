@@ -47,6 +47,7 @@ const Lectures: React.FC<ILecturesProps> = ({ navigation }) => {
                fontSize={fontSize}
                title={"Пройдено тем"}
                complete={currentLevel}
+               total={THEMES.length}
             />
             <ScrollView
                style={{ height: THEMES.length * 49 }}

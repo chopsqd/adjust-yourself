@@ -67,7 +67,8 @@ const TestResult: React.FC<ITestResultProps> = ({ navigation, route }) => {
          <AppLayout>
             <AppProgressBar
                title={"Правильных ответов"}
-               complete={7}
+               total={5}
+               complete={availableCount}
                fontSize={fontSize}
             />
             <ScrollView style={styles.answers}>

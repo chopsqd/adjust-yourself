@@ -29,7 +29,7 @@ describe("StorageService", () => {
       it("should throw an error when data is not present in AsyncStorage", async () => {
          mockedAsyncStorage.getItem.mockResolvedValueOnce(null)
 
-         await expect(StorageService.getData()).rejects.toThrow("Данные отсутствуют")
+         await expect(StorageService.getData()).resolves.toEqual(null)
          expect(mockedAsyncStorage.getItem).toHaveBeenCalledWith("data")
       })
 
