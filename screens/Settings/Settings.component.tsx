@@ -47,7 +47,16 @@ const Settings: React.FC<ISettingsProps> = ({ navigation }) => {
          />
          <AppLayout theme={theme}>
             <View style={styles.row}>
-               <Text style={styles.text}>ТЕМА</Text>
+               <Text
+                  style={[
+                     styles.text,
+                     {
+                        color: theme === ThemeEnum.dark ? "#FFF" : "#000"
+                     }
+                  ]}
+               >
+                  ТЕМА
+               </Text>
                <Switch
                   trackColor={{
                      false: ThemeEnum.dark,
@@ -62,7 +71,16 @@ const Settings: React.FC<ISettingsProps> = ({ navigation }) => {
             </View>
 
             <View style={styles.row}>
-               <Text style={styles.text}>АКЦЕНТ</Text>
+               <Text
+                  style={[
+                     styles.text,
+                     {
+                        color: theme === ThemeEnum.dark ? "#FFF" : "#000"
+                     }
+                  ]}
+               >
+                  АКЦЕНТ
+               </Text>
                <View style={styles.accents}>
                   {Object.keys(ColorsEnum).map((key, index) => {
                      const color = ColorsEnum[key as keyof typeof ColorsEnum]
@@ -84,7 +102,16 @@ const Settings: React.FC<ISettingsProps> = ({ navigation }) => {
             </View>
 
             <View style={styles.row}>
-               <Text style={styles.text}>ШРИФТ</Text>
+               <Text
+                  style={[
+                     styles.text,
+                     {
+                        color: theme === ThemeEnum.dark ? "#FFF" : "#000"
+                     }
+                  ]}
+               >
+                  ШРИФТ
+               </Text>
                <AppFontRange
                   value={fontSizeEnumValues.indexOf(fontSize.toString())}
                   onChange={(e: number) => {

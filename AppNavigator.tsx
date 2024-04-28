@@ -50,7 +50,7 @@ const AppNavigator = () => {
 
    return (
       <NavigationContainer>
-         <Stack.Navigator initialRouteName={"Home"}>
+         <Stack.Navigator initialRouteName={"Creators"}>
             <Stack.Screen
                name={"Home"}
                component={Home}

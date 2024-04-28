@@ -1,5 +1,5 @@
 import React from "react"
-import { Image, View, Alert } from "react-native"
+import { Image, View } from "react-native"
 import { INavigationProp } from "../../AppNavigator"
 import AppLayout from "../../ui-kit/AppLayout/AppLayout.component"
 import { AppButton } from "../../ui-kit"
@@ -53,10 +53,7 @@ const Home: React.FC<IHomeProps> = ({ navigation }) => {
          <View style={styles.buttons}>
             <AppButton
                onPress={() => {
-                  Alert.alert(
-                     "Adjust Yourself",
-                     "Добро пожаловать!\nВ этом приложении ты можешь изучить основы языка JavaScript"
-                  )
+                  navigation.navigate("Creators")
                }}
                title={"info"}
                bgColor={accent}
