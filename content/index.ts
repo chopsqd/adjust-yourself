@@ -14,18 +14,18 @@ export {
    lecture_5, lecture_6, lecture_7, lecture_8, lecture_9
 }
 
+export interface IOption {
+   answer: string;
+   isCorrect: boolean;
+}
+
+export interface ITest {
+   question: string;
+   options: Array<IOption>
+}
+
 export interface ILecture {
    title: string;
    text: string;
-   test: Array<
-      {
-         question: string;
-         options: Array<
-            {
-               answer: string;
-               isCorrect: boolean;
-            }
-         >
-      }
-   >
+   test: Array<ITest>
 }

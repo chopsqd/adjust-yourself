@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react"
 import { INavigationProp } from "../../AppNavigator"
 import { Alert, SafeAreaView, ScrollView, View } from "react-native"
 import Markdown from "react-native-markdown-display"
-import { AppHeader, AppLayout } from "../../ui-kit"
+import { AppButton, AppHeader, AppLayout } from "../../ui-kit"
 import { useAppSelector } from "../../store/hooks"
 import { selectSettings } from "../../store/slices/main"
 import { getLecture } from "./Lecture.utils"
 import { ILecture } from "../../content"
+import { styles } from "./Lecture.style"
 
 interface ILectureProps {
    navigation: INavigationProp
@@ -61,6 +62,16 @@ const Lecture: React.FC<ILectureProps> = ({ navigation, route }) => {
                   >
                      {lecture.text}
                   </Markdown>
+
+                  <AppButton
+                     style={styles.testBtn}
+                     onPress={() => {
+                        navigation.navigate("Test", { lecture: route.params.lecture })
+                     }}
+                     title={"Перейти к тесту"}
+                     bgColor={accent}
+                     fontSize={fontSize}
+                  />
                </ScrollView>
             </SafeAreaView>
          </AppLayout>
