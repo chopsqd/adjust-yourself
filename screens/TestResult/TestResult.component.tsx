@@ -24,10 +24,6 @@ const TestResult: React.FC<ITestResultProps> = ({ navigation, route }) => {
    const { test, allAnswers } = useAppSelector(selectTestData)
    const [ availableCount, setAvailableCount ] = useState<number>(0)
 
-   if (!test) {
-      return null
-   }
-
    useEffect(() => {
       const filteredAnswers = allAnswers.filter((item: IOption) => item.isCorrect)
       setAvailableCount(filteredAnswers.length)
@@ -53,6 +49,10 @@ const TestResult: React.FC<ITestResultProps> = ({ navigation, route }) => {
          }
          navigation.navigate("Lectures")
       }
+   }
+
+   if (!test) {
+      return null
    }
 
    return (
