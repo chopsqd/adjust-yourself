@@ -6,7 +6,7 @@ node_modules/
 # Expo
 .expo/
 .idea/
-#.coverage/
+.coverage/
 #assets/
 dist/
 web-build/

@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "adjust-yourself",
+    "name": "Adjust Yourself!",
     "slug": "adjust-yourself",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -21,10 +21,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "adjust.yourself"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "4bc80d8f-8b93-4974-a9ed-f180bdb51afd"
+      }
     }
   }
 }

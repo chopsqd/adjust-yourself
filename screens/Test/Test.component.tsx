@@ -3,7 +3,7 @@ import { INavigationProp } from "../../AppNavigator"
 import { Alert, ScrollView, Text, View } from "react-native"
 import { AppButton, AppHeader, AppLayout } from "../../ui-kit"
 import { useAppDispatch, useAppSelector } from "../../store/hooks"
-import { selectSettings } from "../../store/slices/main"
+import { selectSettings } from "../../store/slices/mainSlice"
 import { styles } from "./Test.style"
 import { getTest } from "./Test.utils"
 import {
@@ -13,7 +13,7 @@ import {
    resetTestState,
    selectTestData,
    setTest
-} from "../../store/slices/test"
+} from "../../store/slices/testSlice"
 import { IOption, ITest } from "../../content"
 import { ThemeEnum } from "../../services/StorageService/Storage.types"
 

@@ -4,7 +4,7 @@ import { INavigationProp } from "../../AppNavigator"
 import { styles } from "./SandBox.style"
 import AppButton from "../../ui-kit/AppButton/AppButton.component"
 import { useAppSelector } from "../../store/hooks"
-import { selectSettings } from "../../store/slices/main"
+import { selectSettings } from "../../store/slices/mainSlice"
 import { ThemeEnum } from "../../services/StorageService/Storage.types"
 
 interface ISandBoxProps {
