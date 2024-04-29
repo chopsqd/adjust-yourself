@@ -11,9 +11,6 @@ jobs:
     name: Notify
     runs-on: ubuntu-latest
     steps:
-      - name: EAS Build
-        run: npm run build
-
       - name: send telegram message
         uses: appleboy/telegram-action@master
         with:
